@@ -25,7 +25,7 @@ $(".btn").click(function()
     checkAnswer(userClickedPattern.length-1);
   });
 
-  function checkAnswer(currentLevel)
+  function checkAnswer(currentLevel) /*Verifies the user input matches the randomly selected color*/
   {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel])
     {
@@ -50,7 +50,7 @@ $(".btn").click(function()
     }
   }
 
-function nextSequence()
+function nextSequence() /*Main function of the game; Randomly chooses the next color in the sequence*/
 {
   userClickedPattern = [];
   level++;
@@ -63,13 +63,13 @@ function nextSequence()
 
 }
 
-  function playSound(name)
+  function playSound(name) /*Each button is assigned a sound*/
   {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
   }
 
-  function animatePress(currentColor)
+  function animatePress(currentColor) /*Displays small animation for clicking a button*/
   {
     $("#" + currentColor).addClass("pressed");
       setTimeout(function(){
@@ -77,7 +77,7 @@ function nextSequence()
       }, 100);
   }
 
-  function startOver()
+  function startOver() /*Restarts the game*/
   {
     level = 0;
     started = false;
